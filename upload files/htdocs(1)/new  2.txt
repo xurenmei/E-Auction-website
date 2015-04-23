@@ -1,0 +1,178 @@
+<?php
+$db=mysql_connect("localhost","root","");
+$sqlname="MESSAGE";
+mysql_select_db($sqlname,$db);
+mysql_query("SET NAMES 'gbk'",$db);
+if($_POST['tj']){
+$first_name=$_POST['first_name'];
+$password=$_POST['password'];
+$conpassword=$_POST['conpassword'];
+if($password==$conpassword){
+$pwd=$password;
+}
+else{
+echo "<script>alert('Password Incorrect');history.back();</script>";
+}
+$sql="insert into MESSAGE(user,password) values('".$username."','".$pwd."')";
+$result=mysql_query($sql);
+if($result)
+{
+echo "<script>alert('Register Success');</script>";
+}
+else 
+{
+echo "<script>alert('Register Fail, Please Try Again);</script>";
+}
+}
+?>
+
+<html>
+<center>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title> Week 6 HTML</title>
+  </head>
+  <body>
+    <h1><font color="red">Register User</font></h1>
+    <p>Done in Blue Griffon. Created HTML page</p>
+    <form method="POST" action="mailto:animesh301190@gmail.com" target="_User" name="Web Form"
+      enctype="text/plain"
+      accept-charset="utf-8">
+      <table border="1px" bordercolor="BLUE" cellpadding="3px" cellspacing="0">
+        <tbody>
+          <tr>
+            <td colspan="2">Basic HTML Web Form Input Types</td>
+          </tr>
+          <tr>
+            <td width="150px">First Name:</td>
+            <td width="300px"> <input name="first_name" size="40" maxlength="40"
+                required="required"
+                type="text"></td>
+          </tr>
+          <tr>
+            <td>Last Name:</td>
+            <td><input name="last_name" type="text"></td>
+          </tr>
+          
+          <tr>
+            <td>I drive a:</td>
+            <td> <input name="vehicle" value="Unicyle" type="checkbox">Unicycle
+              <input name="vehicle" value="Bicycle" type="checkbox">Bicycle <input
+                name="vehicle"
+                value="Car"
+                type="checkbox">Car</td>
+          </tr>
+          <tr>
+            <td>My Web Browser:</td>
+            <td><input list="browsers"> <datalist id="browsers">
+                <option value="Internet Explorer"></option>
+                <option value="Firefox"></option>
+                <option value="Chrome"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+              </datalist>(Datalist doesn't work in Safari)</td>
+          </tr>
+          <tr>
+            <td>Pick a Color:</td>
+            <td>
+              <select name="Color">
+                <option value="Red"> Red </option>
+                <option value="Blue"> Blue </option>
+                <option value="Green"> Green </option>
+                <option value="Yellow"> Yellow </option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>About You:</td>
+            <td> <textarea rows="10" cols="50">Tell us about yourself.</textarea></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input name="password" type="password"></td>
+          </tr>
+		  <tr>
+            <td>Confirm Password:</td>
+            <td><input name="conpassword" type="conpassword"></td>
+          </tr>
+          <tr>
+            <td colspan="2"> New HTML 5 Web Form Input Types</td>
+          </tr>
+          <tr>
+            <td>Color:</td>
+            <td><a href="http://www.w3schools.com/html/html5_form_input_types.asp"
+                target="_blank"
+                name="Demo">
+                Demos</a></td>
+          </tr>
+          <tr>
+            <td>Date</td>
+            <td><input name="date" type="date"></td>
+            </td>
+          </tr>
+          <tr>
+            <td>Datetime</td>
+            <td><input name="datetime" type="datetime"></td>
+            </td>
+          </tr>
+          <tr>
+            <td>Datetime-local</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Month</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Number</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Range</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Search</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Tel</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Time</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td>URL</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Week</td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td><br>
+            </td>
+            <td><input value="Submit" type="submit"> <input value="Reset" type="reset"></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </body>
+  </center>
+</html>

@@ -1,0 +1,22 @@
+<?php
+
+$conn = @ mysql_connect("localhost","root","") or die ("connection error");
+mysql_select_db("auctionhub",$conn);
+mysql_query("set names 'GBK'");//使用GBK中文编码;
+
+
+ $i = 0 ;
+
+ $sql = "select * from item limit $i , 30";
+
+ $query = mysql_query($sql);
+
+ while ($row = mysql_fetch_array($query)){
+
+?>
+
+ <div style="margin-left:10px;margin-top:20px;width:220px; height:200px; float:left">
+
+  <img src=<?php echo $row[7]?> width=160px height=200px style="float:left"/>
+
+  <div style="float:left;width:60px">

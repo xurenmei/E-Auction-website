@@ -1,0 +1,26 @@
+< ?php  
+//提交下拉框;  
+//直接饱触发onchange事件的结果  
+$id=$_GET['myselect']; // myselect 
+为location.herf?id的名字;  
+echo $id;  
+//用表单提交的结果;  
+if($_POST["sendSelect"]){ //sendSelect 为表单的名字;  
+$select_val=$_POST["selectID"];  
+echo "你选择的值为: $select_val";  
+}  
+// print_r($_POST);  
+$xing="xing";  
+$fang="fang";  
+echo '< a href=del_03.php?id='.$xing.'
+&action='.$fang.'>flx< /a>';  
+//php中,在删除内容时,给的提示的写法; href 后面必须加引号;  
+echo "n"."< input type='button' 
+value='删除' onclick="if(confirm('确定要删除吗'))
+{ location.href='?delete=$result_manage[p_id]'}">
+< br>< br>";  
+}  
+echo "< input type='button' value='connect_next'
+ onclick="location.href='del_03.php?id=
+$xing&action=$fang'">";  
+?> 
